@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synetra ERP — Company Portfolio 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══ RESET & BASE ═══════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:15px}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#FFFFFF;
+  color:#0B1F3A;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ═══ TOKENS ═════════════════════════════════════════ */
+:root{
+  --navy:    #0B1F3A;
+  --navy2:   #112848;
+  --teal:    #00A896;
+  --teal2:   #007A6E;
+  --teal-lt: #E0F7F4;
+  --gold:    #F5B800;
+  --gold-lt: #FEF6D8;
+  --slate:   #4A6080;
+  --fog:     #8CA0B5;
+  --border:  #E2E6EE;
+  --off:     #F7F8FA;
+  --off2:    #F0F3F8;
+
+  --ops:    #1D9E75; --ops-lt:#E1F5EE; --ops-dk:#0F6E56;
+  --hr:     #378ADD; --hr-lt: #E6F1FB; --hr-dk: #185FA5;
+  --pay:    #EF9F27; --pay-lt:#FEF3E2; --pay-dk:#854F0B;
+  --fin:    #7F77DD; --fin-lt:#EEEDFE; --fin-dk:#3C3489;
+  --adm:    #D85A30; --adm-lt:#FAECE7; --adm-dk:#993C1D;
+  --mob:    #D4537E; --mob-lt:#FBEAF0; --mob-dk:#72243E;
+  --int:    #639922; --int-lt:#EAF3DE; --int-dk:#3B6D11;
+
+  --radius-sm:6px; --radius-md:10px; --radius-lg:16px; --radius-xl:24px;
+  --shadow-sm:0 1px 3px rgba(11,31,58,.06),0 1px 2px rgba(11,31,58,.04);
+  --shadow-md:0 4px 16px rgba(11,31,58,.08),0 1px 4px rgba(11,31,58,.05);
+  --shadow-lg:0 12px 40px rgba(11,31,58,.10),0 2px 8px rgba(11,31,58,.06);
+
+  --max:1240px;
+  --pad:clamp(20px,4vw,48px);
+}
+
+/* ═══ TYPOGRAPHY ═════════════════════════════════════ */
+.serif{font-family:'Playfair Display',serif}
+.mono {font-family:'DM Mono',monospace}
+.eyebrow{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem;
+}
+h1,h2{font-family:'Playfair Display',serif;line-height:1.2;letter-spacing:-.02em}
+h3{font-size:1.1rem;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+h4{font-size:.9rem;font-weight:600;color:var(--navy)}
+
+/* ═══ LAYOUT ═════════════════════════════════════════ */
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+section{padding:80px 0}
+.section-head{margin-bottom:48px}
+.section-head h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:.75rem}
+.section-head p{font-size:1.05rem;color:var(--slate);max-width:600px;line-height:1.7}
+
+/* ═══ NAV ════════════════════════════════════════════ */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 var(--pad);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;
+  height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-sq{
+  width:32px;height:32px;background:var(--teal);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:13px;font-weight:500;color:#fff;
+  flex-shrink:0;
+}
+.nav-logo-name{font-size:1rem;font-weight:600;color:var(--navy)}
+.nav-logo-sub{font-size:.7rem;color:var(--fog);letter-spacing:.06em}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links a{
+  font-size:.8rem;font-weight:500;color:var(--slate);text-decoration:none;
+  padding:5px 10px;border-radius:6px;transition:all .15s;white-space:nowrap;
+}
+.nav-links a:hover{background:var(--off);color:var(--navy)}
+.nav-cta{
+  background:var(--navy);color:#fff;font-size:.8rem;font-weight:600;
+  padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;
+  transition:background .15s;
+}
+.nav-cta:hover{background:var(--teal)}
+
+/* ═══ HERO ════════════════════════════════════════════ */
+.hero{
+  background:var(--navy);
+  padding:80px 0 0;
+  overflow:hidden;
+  position:relative;
+}
+.hero::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,168,150,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:80px;left:-80px;
+  width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,184,0,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:start;
+}
+.hero-left{}
+.hero-eyebrow{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);display:block;margin-bottom:1.2rem;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.4rem,5vw,4rem);
+  line-height:1.12;letter-spacing:-.03em;
+  color:#fff;margin-bottom:1.5rem;
+}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:2rem;max-width:480px}
+.hero-bullets{margin-bottom:2.5rem}
+.hero-bullet{
+  display:flex;align-items:center;gap:10px;
+  font-size:.9rem;color:rgba(255,255,255,.65);padding:5px 0;
+}
+.hero-bullet::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--teal);flex-shrink:0;
+}
+.hero-mkt{margin-bottom:2.5rem}
+.hero-mkt-label{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--fog);margin-bottom:.6rem;display:block}
+.hero-tags{display:flex;gap:6px;flex-wrap:wrap}
+.hero-tag{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:4px 12px;font-size:.78rem;color:rgba(255,255,255,.6);
+}
+.hero-meta{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:1rem;
+}
+.hero-meta-item{padding:.75rem 0;padding-right:1rem}
+.hero-meta-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);margin-bottom:.3rem}
+.hero-meta-val{font-size:.85rem;color:rgba(255,255,255,.75)}
+
+/* Hero right */
+.hero-right{padding-top:.5rem}
+.hero-kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.hero-kpi{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-md);padding:18px 16px;
+  border-top:2px solid var(--teal);
+}
+.kpi-val{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:.4rem;
+}
+.kpi-lbl{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.4}
+.hero-flagship{
+  background:rgba(0,168,150,.08);border:1px solid rgba(0,168,150,.25);
+  border-radius:var(--radius-md);padding:18px;margin-bottom:14px;
+  border-top:2px solid var(--gold);
+}
+.flagship-label{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.flagship-name{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.flagship-desc{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5}
+.hero-comp-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);margin-bottom:.6rem}
+.hero-comp-tags{display:flex;gap:5px;flex-wrap:wrap}
+.hero-comp-tag{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:4px;padding:3px 9px;font-size:.75rem;color:rgba(255,255,255,.6);
+}
+.hero-wave{
+  height:60px;margin-top:60px;
+  background:linear-gradient(to bottom,transparent,#fff);
+}
+
+/* ═══ ABOUT ══════════════════════════════════════════ */
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.manifesto{
+  background:var(--navy);border-radius:var(--radius-lg);padding:32px;
+  position:relative;overflow:hidden;margin-bottom:24px;
+}
+.manifesto::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal)}
+.manifesto-quote{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,.85);margin-bottom:.75rem;
+}
+.manifesto-attr{font-size:.78rem;color:rgba(255,255,255,.35);letter-spacing:.05em}
+.about-body{font-size:.95rem;color:var(--slate);line-height:1.75;margin-bottom:1rem}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:1.5rem 0}
+.astat{background:var(--teal-lt);border:1px solid rgba(0,168,150,.2);border-radius:var(--radius-md);padding:14px}
+.astat-val{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--teal2)}
+.astat-lbl{font-size:.78rem;color:var(--slate);margin-top:.25rem}
+.legal-card{background:var(--off);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px;margin:1rem 0}
+.legal-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);margin-bottom:.4rem}
+.legal-name{font-size:1rem;font-weight:600;color:var(--navy)}
+.legal-sub{font-size:.85rem;color:var(--slate)}
+.flow-strip{display:flex;align-items:center;gap:0;background:var(--off);border-radius:var(--radius-md);overflow:hidden;margin:1rem 0}
+.flow-step{
+  flex:1;padding:9px 6px;text-align:center;font-size:.78rem;font-weight:600;
+  color:var(--slate);position:relative;
+}
+.flow-step.hl{background:var(--teal);color:#fff}
+.flow-step:not(:last-child)::after{
+  content:'›';position:absolute;right:-6px;top:50%;transform:translateY(-50%);
+  color:var(--fog);font-size:14px;z-index:1;
+}
+.gcc-row{display:flex;gap:6px;flex-wrap:wrap;margin:1rem 0}
+.gcc-tag{
+  background:var(--teal-lt);border:1px solid rgba(0,168,150,.2);
+  border-radius:6px;padding:5px 12px;font-size:.78rem;font-weight:600;color:var(--teal2);
+}
+
+/* Pillars */
+.pillars-title{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.pillar{
+  display:flex;gap:12px;padding:14px;background:var(--off);
+  border:1px solid var(--border);border-radius:var(--radius-md);margin-bottom:8px;
+  transition:box-shadow .15s,transform .15s;
+}
+.pillar:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.pillar-num{
+  width:28px;height:28px;flex-shrink:0;
+  background:var(--teal-lt);border:1px solid var(--teal);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:.78rem;font-weight:500;color:var(--teal2);
+}
+.pillar-title{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:.25rem}
+.pillar-desc{font-size:.82rem;color:var(--slate);line-height:1.55}
+
+/* ═══ PRODUCTS ═══════════════════════════════════════ */
+.products{background:var(--off2)}
+.suite-banner{
+  background:var(--navy);border-radius:var(--radius-lg);padding:24px 28px;
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
+}
+.suite-name{font-size:1.1rem;font-weight:700;color:#fff}
+.suite-sub{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.25rem}
+.suite-badge{background:var(--teal);color:#fff;font-size:.72rem;font-weight:600;padding:6px 14px;border-radius:6px;letter-spacing:.04em}
+.product-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.product-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .2s,transform .2s;
+}
+.product-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.pc-header{padding:16px 18px 12px;display:flex;align-items:center;gap:12px}
+.pc-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.pc-name{font-size:1.05rem;font-weight:700;color:var(--navy)}
+.pc-sub{font-size:.75rem;color:var(--fog);margin-top:.1rem}
+.pc-badge{font-size:.68rem;font-weight:600;padding:3px 9px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.pc-body{padding:0 18px 16px}
+.pc-desc{font-size:.85rem;color:var(--slate);line-height:1.6;margin-bottom:10px}
+.pc-caps{display:flex;flex-wrap:wrap;gap:5px}
+.pc-cap{background:var(--off);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-size:.75rem;color:var(--slate)}
+.services-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.service-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  overflow:hidden;transition:box-shadow .2s;
+}
+.service-card:hover{box-shadow:var(--shadow-md)}
+.sc-top{padding:12px 14px 10px;border-bottom:1px solid var(--border)}
+.sc-icon{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;margin-bottom:6px}
+.sc-name{font-size:.9rem;font-weight:700;color:var(--navy)}
+.sc-body{padding:10px 14px;background:var(--off)}
+.sc-desc{font-size:.78rem;color:var(--slate);line-height:1.5}
+
+/* ═══ KAFAAONE MODULES ════════════════════════════════ */
+.modules-section{background:#fff}
+.k1-hero{
+  background:var(--navy);border-radius:var(--radius-xl);padding:32px 36px;
+  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  margin-bottom:28px;position:relative;overflow:hidden;
+}
+.k1-hero::before{
+  content:'';position:absolute;right:-40px;top:-40px;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,168,150,.15) 0%,transparent 70%);
+}
+.k1-hero-top{border-top:3px solid var(--gold);border-radius:0}
+.k1-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.k1-name{font-family:'Playfair Display',serif;font-size:2.2rem;color:#fff;margin-bottom:.5rem}
+.k1-tagline{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.6}
+.k1-flow{display:flex;gap:0;margin-top:1.2rem;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden}
+.k1-step{
+  flex:1;padding:8px 4px;text-align:center;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.45);
+  position:relative;
+}
+.k1-step.hl{background:rgba(0,168,150,.2);color:var(--teal)}
+.k1-step:not(:last-child)::after{content:'›';position:absolute;right:-4px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.2);font-size:12px}
+.k1-stats{display:flex;flex-direction:column;gap:8px;min-width:140px}
+.k1-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);padding:12px 14px}
+.k1-stat-val{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);line-height:1}
+.k1-stat-lbl{font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.25rem}
+
+/* Domain section */
+.domain-section{margin-bottom:32px}
+.domain-header{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:var(--radius-md);margin-bottom:12px;
+}
+.domain-icon-sq{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.domain-name{font-size:.95rem;font-weight:700}
+.domain-count{font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:10px;margin-left:auto}
+.module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.module-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mod-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .2s,transform .15s;
+}
+.mod-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.mod-header{padding:10px 12px 8px}
+.mod-tag{font-size:.63rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;display:block}
+.mod-name{font-size:.9rem;font-weight:700;color:var(--navy)}
+.mod-body{padding:0 12px 10px;border-top:1px solid var(--border);padding-top:8px}
+.mod-feat{
+  font-size:.78rem;color:var(--slate);padding:3px 0;
+  display:flex;gap:6px;align-items:flex-start;line-height:1.4;
+}
+.mod-feat::before{content:'·';color:var(--teal);flex-shrink:0;margin-top:-1px;font-size:14px}
+
+/* ═══ INDUSTRIES ══════════════════════════════════════ */
+.industries-section{background:var(--off2)}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.ind-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:0;overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .2s,transform .2s;
+}
+.ind-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.ind-accent{height:4px;border-radius:0}
+.ind-body{padding:20px}
+.ind-name{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.6rem}
+.ind-desc{font-size:.84rem;color:var(--slate);line-height:1.6;margin-bottom:1rem}
+.ind-tags{display:flex;flex-wrap:wrap;gap:5px}
+.ind-tag{background:var(--teal-lt);border:1px solid rgba(0,168,150,.2);border-radius:5px;padding:3px 9px;font-size:.74rem;color:var(--teal2);font-weight:500}
+.gcc-banner{
+  background:var(--navy);border-radius:var(--radius-lg);padding:24px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  margin-bottom:16px;
+}
+.gcc-banner-left .gcc-b-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
+.gcc-banner-left h3{color:#fff;font-size:1.05rem;font-weight:700}
+.gcc-banner-tags{display:flex;gap:6px;flex-wrap:wrap}
+.gcc-b-tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:5px 12px;font-size:.8rem;color:rgba(255,255,255,.65)}
+.comp-boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.comp-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:18px}
+.comp-box h4{margin-bottom:.4rem}
+.comp-box p{font-size:.84rem;color:var(--slate);line-height:1.6}
+
+/* ═══ WHY SYNETRA ═════════════════════════════════════ */
+.why-section{background:#fff}
+.comparison-table{width:100%;border-collapse:collapse;margin-bottom:32px;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)}
+.comparison-table thead th{padding:12px 16px;text-align:left;background:var(--navy);color:#fff;font-size:.8rem;font-weight:600;letter-spacing:.04em}
+.comparison-table thead th:last-child{background:var(--teal)}
+.comparison-table tbody tr:nth-child(even) td{background:var(--off)}
+.comparison-table tbody td{padding:11px 16px;font-size:.85rem;border-bottom:1px solid var(--border)}
+.ct-feat{color:var(--navy);font-weight:600}
+.ct-no{color:#993C1D}.ct-yes{color:var(--ops-dk);font-weight:500}
+.why-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.why-card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;transition:box-shadow .2s,transform .2s}
+.why-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.why-card.featured{background:var(--navy);border-color:var(--navy)}
+.why-icon{font-size:1.4rem;margin-bottom:.75rem;display:block}
+.why-title{font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+.why-card.featured .why-title{color:#fff}
+.why-body{font-size:.8rem;color:var(--slate);line-height:1.6;margin-bottom:.75rem}
+.why-card.featured .why-body{color:rgba(255,255,255,.5)}
+.why-bullets .wb{font-size:.78rem;color:var(--slate);padding:3px 0;display:flex;gap:6px;align-items:center}
+.why-bullets .wb::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+.why-card.featured .wb{color:rgba(255,255,255,.55)}
+
+/* ═══ IMPLEMENTATION ══════════════════════════════════ */
+.impl-section{background:var(--off2)}
+.impl-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:28px}
+.impl-step{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:18px 14px;text-align:center;transition:box-shadow .2s;position:relative;
+}
+.impl-step:not(:last-child)::after{
+  content:'›';position:absolute;right:-6px;top:50%;transform:translateY(-50%);
+  color:var(--fog);font-size:18px;z-index:1;
+}
+.impl-step:hover{box-shadow:var(--shadow-md)}
+.impl-num{
+  width:32px;height:32px;background:var(--teal);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:.85rem;color:#fff;margin:0 auto 10px;
+}
+.impl-step-name{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.impl-step-desc{font-size:.75rem;color:var(--slate);line-height:1.5}
+.impl-details{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.impl-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:20px}
+.impl-box h4{margin-bottom:12px}
+.impl-item{font-size:.82rem;color:var(--slate);padding:4px 0;display:flex;gap:8px;align-items:flex-start}
+.impl-item::before{content:'·';color:var(--teal);flex-shrink:0;font-size:14px;margin-top:-1px}
+.impl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.impl-stat{background:var(--teal-lt);border:1px solid rgba(0,168,150,.2);border-radius:var(--radius-md);padding:16px}
+.impl-stat-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:.4rem}
+.impl-stat-val{font-size:1.1rem;font-weight:700;color:var(--navy)}
+.impl-stat-sub{font-size:.75rem;color:var(--slate);margin-top:.2rem}
+
+/* ═══ CTA ════════════════════════════════════════════ */
+.cta-section{
+  background:var(--navy);padding:100px 0;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;
+  border-radius:50%;background:radial-gradient(circle,rgba(0,168,150,.1) 0%,transparent 70%);
+}
+.cta-section::after{
+  content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;
+  border-radius:50%;background:radial-gradient(circle,rgba(245,184,0,.07) 0%,transparent 70%);
+}
+.cta-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
+.cta-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1.2rem;display:block}
+.cta-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3.2rem);color:#fff;margin-bottom:1rem;line-height:1.15;
+}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-sub{font-size:1rem;color:rgba(255,255,255,.45);line-height:1.7;max-width:480px;margin-bottom:2.5rem}
+.cta-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:3rem}
+.cta-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);padding:18px;text-align:center}
+.cta-stat-val{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);line-height:1}
+.cta-stat-lbl{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:.4rem;line-height:1.4}
+.contact-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:2.5rem}
+.contact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);padding:16px}
+.contact-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
+.contact-val{font-size:.9rem;color:rgba(255,255,255,.75)}
+.domains-summary{margin-top:2rem}
+.ds-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem}
+.ds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.ds-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px}
+.ds-name{font-size:.68rem;font-weight:600;margin-bottom:.3rem}
+.ds-caps{font-size:.7rem;color:rgba(255,255,255,.3);line-height:1.5}
+.cta-divider{height:1px;background:rgba(255,255,255,.08);margin:2.5rem 0}
+.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.25)}
+.footer-countries{display:flex;gap:12px;flex-wrap:wrap}
+.fc-item{font-size:.75rem;color:rgba(255,255,255,.25)}
+
+/* ═══ OUTCOMES STRIP ══════════════════════════════════ */
+.outcomes-strip{
+  background:var(--off2);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:40px 0;
+}
+.outcomes-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.outcome-box{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:16px;text-align:center;
+}
+.outcome-val{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--teal);line-height:1}
+.outcome-lbl{font-size:.72rem;color:var(--slate);margin-top:.4rem;line-height:1.4}
+.outcome-dir{font-size:.68rem;color:var(--ops-dk);font-weight:600;margin-top:.2rem}
+
+/* ═══ REVEAL ANIMATIONS ═══════════════════════════════ */
+.reveal{
+  opacity:0;transform:translateY(22px);
+  transition:opacity .55s ease,transform .55s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.08s}
+.reveal-delay-2{transition-delay:.16s}
+.reveal-delay-3{transition-delay:.24s}
+.reveal-delay-4{transition-delay:.32s}
+.reveal-delay-5{transition-delay:.40s}
+.reveal-delay-6{transition-delay:.48s}
+
+/* ═══ UTILITIES ══════════════════════════════════════ */
+.divider{height:1px;background:var(--border);margin:0}
+
+/* ═══ HAMBURGER MENU ══════════════════════════════════ */
+.nav-hamburger{
+  display:none;
+  width:38px;height:38px;
+  background:none;border:1px solid var(--border);border-radius:8px;
+  cursor:pointer;align-items:center;justify-content:center;
+  flex-direction:column;gap:5px;padding:8px;flex-shrink:0;
+}
+.nav-hamburger span{
+  display:block;width:18px;height:2px;
+  background:var(--navy);border-radius:2px;
+  transition:transform .25s,opacity .25s;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile nav drawer */
+.mobile-nav{
+  display:none;
+  position:fixed;top:60px;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,.98);
+  backdrop-filter:blur(12px);
+  z-index:99;
+  flex-direction:column;
+  padding:24px var(--pad);
+  overflow-y:auto;
+  border-top:1px solid var(--border);
+  transform:translateY(-8px);opacity:0;
+  transition:transform .25s ease,opacity .25s ease;
+}
+.mobile-nav.open{
+  display:flex;transform:translateY(0);opacity:1;
+}
+.mobile-nav a{
+  font-size:1.1rem;font-weight:600;color:var(--navy);
+  text-decoration:none;padding:14px 0;
+  border-bottom:1px solid var(--border);
+  display:block;
+}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav .mobile-cta{
+  margin-top:20px;
+  background:var(--navy);color:#fff;
+  text-align:center;padding:14px;border-radius:10px;
+  font-size:1rem;border-bottom:none;
+}
+
+/* ═══ TABLET — 768px to 1024px ═══════════════════════ */
+@media(max-width:1024px){
+  :root{ --pad:clamp(16px,3vw,32px) }
+  .hero-inner{ grid-template-columns:1fr 360px; gap:40px }
+  .about-grid{ gap:40px }
+  .module-grid-4{ grid-template-columns:1fr 1fr }
+  .why-cards{ grid-template-columns:1fr 1fr }
+  .cta-stats{ grid-template-columns:1fr 1fr }
+  .k1-hero{ grid-template-columns:1fr; }
+  .k1-stats{ flex-direction:row; gap:10px; min-width:unset; }
+  .k1-stat{ flex:1 }
+  .comparison-table{ font-size:.82rem }
+  .ds-grid{ grid-template-columns:repeat(4,1fr) }
+}
+
+/* ═══ TABLET SMALL — up to 900px ═════════════════════ */
+@media(max-width:900px){
+  section{ padding:56px 0 }
+  .section-head{ margin-bottom:32px }
+
+  /* Nav */
+  .nav-links{ display:none }
+  .nav-hamburger{ display:flex }
+  .nav-cta{ display:none }
+
+  /* Hero — stack, show KPIs below */
+  .hero{ padding:48px 0 0 }
+  .hero-inner{ grid-template-columns:1fr; gap:0 }
+  .hero-right{
+    display:block;
+    padding:32px var(--pad) 0;
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:32px;
+  }
+  .hero-kpi-grid{ grid-template-columns:1fr 1fr; gap:8px }
+  .hero-title{ font-size:clamp(2rem,6vw,3rem) }
+  .hero-meta{ grid-template-columns:1fr 1fr }
+  .hero-wave{ height:40px; margin-top:32px }
+
+  /* About */
+  .about-grid{ grid-template-columns:1fr; gap:32px }
+
+  /* Products */
+  .product-row{ grid-template-columns:1fr }
+  .services-grid{ grid-template-columns:1fr 1fr }
+
+  /* Modules */
+  .module-grid{ grid-template-columns:1fr 1fr }
+  .module-grid-4{ grid-template-columns:1fr 1fr }
+  .k1-hero{ padding:24px; border-radius:var(--radius-lg) }
+  .k1-name{ font-size:1.8rem }
+
+  /* Industries */
+  .ind-grid{ grid-template-columns:1fr 1fr }
+  .gcc-banner{ flex-direction:column; align-items:flex-start; gap:16px }
+
+  /* Why */
+  .why-cards{ grid-template-columns:1fr 1fr }
+  .comparison-table{ font-size:.78rem }
+  .comparison-table thead th,
+  .comparison-table tbody td{ padding:9px 11px }
+
+  /* Impl */
+  .impl-steps{ grid-template-columns:1fr 1fr; gap:10px }
+  .impl-step:not(:last-child)::after{ display:none }
+  .impl-details{ grid-template-columns:1fr }
+  .impl-stats{ grid-template-columns:1fr 1fr 1fr }
+
+  /* Outcomes */
+  .outcomes-grid{ grid-template-columns:repeat(3,1fr) }
+
+  /* CTA */
+  .cta-stats{ grid-template-columns:1fr 1fr }
+  .contact-cards{ grid-template-columns:1fr 1fr }
+  .ds-grid{ grid-template-columns:1fr 1fr }
+
+  /* Comp boxes */
+  .comp-boxes{ grid-template-columns:1fr 1fr }
+}
+
+/* ═══ MOBILE — up to 640px ════════════════════════════ */
+@media(max-width:640px){
+  html{ font-size:14px }
+  section{ padding:44px 0 }
+  .section-head{ margin-bottom:24px }
+  .section-head h2{ font-size:1.7rem }
+
+  /* Hero */
+  .hero{ padding:36px 0 0 }
+  .hero-title{ font-size:2rem; letter-spacing:-.02em }
+  .hero-sub{ font-size:.95rem }
+  .hero-right{ padding:24px var(--pad) 0 }
+  .hero-kpi-grid{ grid-template-columns:1fr 1fr }
+  .hero-meta{ grid-template-columns:1fr }
+  .hero-meta-item{ padding:.5rem 0 }
+  .hero-mkt{ margin-bottom:1.5rem }
+  .hero-bullets{ margin-bottom:1.5rem }
+
+  /* About */
+  .manifesto{ padding:20px }
+  .manifesto-quote{ font-size:.95rem }
+  .about-stats{ grid-template-columns:1fr 1fr 1fr }
+  .flow-strip{ font-size:.7rem }
+
+  /* Products */
+  .services-grid{ grid-template-columns:1fr }
+  .suite-banner{ flex-direction:column; align-items:flex-start; gap:12px }
+
+  /* KafaaOne */
+  .k1-hero{ grid-template-columns:1fr; padding:20px }
+  .k1-name{ font-size:1.6rem }
+  .k1-stats{ flex-direction:row; gap:8px }
+  .k1-stat{ padding:10px 12px }
+  .k1-stat-val{ font-size:1.2rem }
+  .k1-flow .k1-step{ font-size:.7rem; padding:7px 2px }
+  .module-grid{ grid-template-columns:1fr }
+  .module-grid-4{ grid-template-columns:1fr }
+  .domain-header{ padding:8px 12px }
+  .domain-name{ font-size:.88rem }
+
+  /* Industries */
+  .ind-grid{ grid-template-columns:1fr }
+  .gcc-banner{ padding:18px 20px }
+  .comp-boxes{ grid-template-columns:1fr }
+
+  /* Why */
+  .why-cards{ grid-template-columns:1fr }
+  .comparison-table{ display:block; overflow-x:auto; -webkit-overflow-scrolling:touch }
+  .comparison-table table{ min-width:520px }
+
+  /* Impl */
+  .impl-steps{ grid-template-columns:1fr }
+  .impl-stat{ padding:14px }
+  .impl-stats{ grid-template-columns:1fr }
+
+  /* Outcomes */
+  .outcomes-grid{ grid-template-columns:1fr 1fr }
+
+  /* CTA */
+  .cta-section{ padding:64px 0 }
+  .cta-title{ font-size:1.8rem }
+  .cta-stats{ grid-template-columns:1fr 1fr }
+  .contact-cards{ grid-template-columns:1fr 1fr }
+  .ds-grid{ grid-template-columns:1fr 1fr }
+  .domains-summary{ margin-top:1.5rem }
+
+  /* Footer */
+  .footer-row{ flex-direction:column; gap:8px }
+  .footer-countries{ flex-wrap:wrap; gap:8px }
+}
+
+/* ═══ MOBILE SMALL — up to 400px ══════════════════════ */
+@media(max-width:400px){
+  .hero-title{ font-size:1.75rem }
+  .hero-kpi-grid{ grid-template-columns:1fr 1fr }
+  .about-stats{ grid-template-columns:1fr 1fr }
+  .cta-stats{ grid-template-columns:1fr 1fr }
+  .contact-cards{ grid-template-columns:1fr }
+  .ds-grid{ grid-template-columns:1fr }
+  .outcomes-grid{ grid-template-columns:1fr 1fr }
+  .k1-stats{ flex-direction:column }
+  .impl-stats{ grid-template-columns:1fr }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-sq">S</div>
+      <div>
+        <div class="nav-logo-name">Synetra ERP</div>
+        <div class="nav-logo-sub">ENTERPRISE SOFTWARE · GCC</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#kafaaone">KafaaOne</a>
+      <a href="#industries">Industries</a>
+      <a href="#why">Why Synetra</a>
+      <a href="#implementation">Implementation</a>
+    </div>
+    <a href="#cta" class="nav-cta">Book a Demo</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#products" class="mobile-link">Products</a>
+  <a href="#kafaaone" class="mobile-link">KafaaOne</a>
+  <a href="#industries" class="mobile-link">Industries</a>
+  <a href="#why" class="mobile-link">Why Synetra</a>
+  <a href="#implementation" class="mobile-link">Implementation</a>
+  <a href="#cta" class="mobile-cta mobile-link">Book a Demo →</a>
+</div>
+
+<!-- ═══ HERO ════════════════════════════════════════ -->
+<section id="hero" class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Company Portfolio &amp; Product Overview · 2025</span>
+      <h1 class="hero-title">Enterprise ERP for the <em>GCC Workforce</em> Economy</h1>
+      <p class="hero-sub">Unified HR, Payroll, Operations &amp; Finance — engineered around Qatar labour law, WPS compliance, and the realities of distributed workforces.</p>
+      <div class="hero-bullets">
+        <div class="hero-bullet">Pre-configured for Qatar Labour Law &amp; WPS</div>
+        <div class="hero-bullet">Native SIF generation for all major GCC banks</div>
+        <div class="hero-bullet">Arabic &amp; English UI with role-based dashboards</div>
+        <div class="hero-bullet">4–8 week go-live — fixed scope, no consulting circus</div>
+        <div class="hero-bullet">Autonomous AI across HR, Payroll and Operations</div>
+      </div>
+      <div class="hero-mkt">
+        <span class="hero-mkt-label">Markets Served</span>
+        <div class="hero-tags">
+          <span class="hero-tag">Qatar</span><span class="hero-tag">UAE</span>
+          <span class="hero-tag">KSA</span><span class="hero-tag">Bahrain</span>
+          <span class="hero-tag">Oman</span><span class="hero-tag">Kuwait</span>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><div class="hero-meta-label">Headquarters</div><div class="hero-meta-val">Doha, Qatar</div></div>
+        <div class="hero-meta-item"><div class="hero-meta-label">Legal Entity</div><div class="hero-meta-val">BD for IT and Trading</div></div>
+        <div class="hero-meta-item"><div class="hero-meta-label">Contact</div><div class="hero-meta-val">info@synetraerp.com</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-kpi-grid">
+        <div class="hero-kpi"><div class="kpi-val">50K+</div><div class="kpi-lbl">Employees managed across GCC implementations</div></div>
+        <div class="hero-kpi"><div class="kpi-val">100%</div><div class="kpi-lbl">WPS submission accuracy across all clients</div></div>
+        <div class="hero-kpi"><div class="kpi-val">4–8<br><small style="font-size:1rem">wks</small></div><div class="kpi-lbl">Average go-live time from contract signing</div></div>
+        <div class="hero-kpi"><div class="kpi-val">250+</div><div class="kpi-lbl">Platform capabilities across all modules</div></div>
+      </div>
+      <div class="hero-flagship">
+        <div class="flagship-label">Flagship Product</div>
+        <div class="flagship-name">KafaaOne</div>
+        <div class="flagship-desc">Complete ERP for security, manpower &amp; facility management — 39 apps, 8 domains, from recruit to WPS payout.</div>
+      </div>
+      <div>
+        <div class="hero-comp-label">Compliance &amp; Standards</div>
+        <div class="hero-comp-tags">
+          <span class="hero-comp-tag">Qatar Labour Law</span>
+          <span class="hero-comp-tag">WPS / SIF Ready</span>
+          <span class="hero-comp-tag">EOSB Compliant</span>
+          <span class="hero-comp-tag">GCC VAT</span>
+          <span class="hero-comp-tag">Arabic + English</span>
+          <span class="hero-comp-tag">Multi-Currency</span>
+          <span class="hero-comp-tag">Multi-Entity</span>
+          <span class="hero-comp-tag">PDPL Ready</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave"></div>
+</section>
+
+<!-- ═══ ABOUT ════════════════════════════════════════ -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who We Are</span>
+      <h2>Practical enterprise software,<br>without the consulting circus.</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <div class="manifesto reveal">
+          <div class="manifesto-quote">"Synetra ERP was built because GCC businesses deserved enterprise-grade workforce software that actually understands how they operate — not generic platforms that require years of customisation and a permanent consulting team to function."</div>
+          <div class="manifesto-attr">— Synetra ERP, Founding Principle</div>
+        </div>
+        <p class="about-body reveal">Synetra ERP is a brand of BD for IT and Trading, headquartered in Doha, Qatar. We build enterprise HR, Payroll, Operations and Finance software specifically engineered for the GCC workforce economy — with Qatar labour law, WPS rules, and SIF banking standards built in from day one, not bolted on later.</p>
+        <p class="about-body reveal">Our platform unifies every function that touches your workforce: from the moment a candidate applies, through deployment, attendance, payroll, and final settlement — with zero spreadsheets and zero re-keying between modules.</p>
+        <div class="about-stats reveal">
+          <div class="astat"><div class="astat-val">50K+</div><div class="astat-lbl">Employees managed</div></div>
+          <div class="astat"><div class="astat-val">100%</div><div class="astat-lbl">WPS accuracy</div></div>
+          <div class="astat"><div class="astat-val">4–8 wks</div><div class="astat-lbl">Go-live time</div></div>
+        </div>
+        <div class="legal-card reveal">
+          <div class="legal-label">Legal Entity</div>
+          <div class="legal-name">BD for IT and Trading</div>
+          <div class="legal-sub">Doha, Qatar — Serving the GCC Region</div>
+        </div>
+        <div class="flow-strip reveal">
+          <div class="flow-step hl">HR</div>
+          <div class="flow-step">Attendance</div>
+          <div class="flow-step">Payroll</div>
+          <div class="flow-step">WPS</div>
+          <div class="flow-step hl">SIF File</div>
+        </div>
+        <div class="gcc-row reveal">
+          <span class="gcc-tag">Qatar</span><span class="gcc-tag">UAE</span>
+          <span class="gcc-tag">KSA</span><span class="gcc-tag">Bahrain</span>
+          <span class="gcc-tag">Oman</span><span class="gcc-tag">Kuwait</span>
+        </div>
+      </div>
+      <div>
+        <div class="pillars-title reveal">Our Core Commitments</div>
+        <div class="pillar reveal reveal-delay-1">
+          <div class="pillar-num">01</div>
+          <div><div class="pillar-title">Qatar-First Compliance</div><div class="pillar-desc">Pre-configured for Qatar Labour Law, WPS, EOSB, gratuity and leave rules. Native SIF file generation for QNB, CBQ, Doha Bank, Ahli Bank, QIB and all major GCC banks.</div></div>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <div class="pillar-num">02</div>
+          <div><div class="pillar-title">One Connected Data Model</div><div class="pillar-desc">Every module shares one source of truth. The hours your team clocks become payroll, then WPS, then SIF — with no spreadsheets in between.</div></div>
+        </div>
+        <div class="pillar reveal reveal-delay-3">
+          <div class="pillar-num">03</div>
+          <div><div class="pillar-title">Arabic &amp; English, RTL-Ready</div><div class="pillar-desc">Full bilingual interface with RTL layout support and role-based dashboards in both languages for every level of the organisation.</div></div>
+        </div>
+        <div class="pillar reveal reveal-delay-4">
+          <div class="pillar-num">04</div>
+          <div><div class="pillar-title">Fast, Fixed-Scope Go-Live</div><div class="pillar-desc">4–8 week implementation with a senior GCC specialist. Discovery, configuration, migration, UAT, and hypercare — no open-ended consulting.</div></div>
+        </div>
+        <div class="pillar reveal reveal-delay-5">
+          <div class="pillar-num">05</div>
+          <div><div class="pillar-title">Autonomous AI Capabilities</div><div class="pillar-desc">Synetra AI connects with any ERP, CRM, or SaaS tool to automate workflows, recommend decisions, and turn enterprise data into action — in English and Arabic.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUCTS ══════════════════════════════════════ -->
+<section id="products" class="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Build</span>
+      <h2>Two flagship products.<br>One unified platform strategy.</h2>
+    </div>
+    <div class="suite-banner reveal">
+      <div><div class="suite-name">Synetra ERP Product Suite</div><div class="suite-sub">Enterprise HR · Payroll · Operations · Finance · AI — Built for Qatar &amp; GCC</div></div>
+      <div class="suite-badge">2025 Portfolio</div>
+    </div>
+    <div class="product-row reveal">
+      <div class="product-card">
+        <div class="pc-header" style="background:var(--teal-lt)">
+          <div class="pc-icon" style="background:var(--teal);color:#fff">K1</div>
+          <div><div class="pc-name" style="color:var(--teal2)">KafaaOne</div><div class="pc-sub">Security &amp; Workforce ERP — Flagship</div></div>
+          <div class="pc-badge" style="background:var(--teal);color:#fff">FLAGSHIP</div>
+        </div>
+        <div class="pc-body">
+          <p class="pc-desc">The complete ERP for security companies, manpower suppliers, and facility management firms. 39 apps across 8 domains — from guard deployment and patrol monitoring to payroll and WPS in one unified system.</p>
+          <div class="pc-caps">
+            <span class="pc-cap">Operations</span><span class="pc-cap">Smart Rostering</span>
+            <span class="pc-cap">Patrol Monitoring</span><span class="pc-cap">HR Lifecycle</span>
+            <span class="pc-cap">WPS / SIF</span><span class="pc-cap">Finance BI</span>
+            <span class="pc-cap">Mobile Apps</span><span class="pc-cap">39 Apps</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-header" style="background:var(--off)">
+          <div class="pc-icon" style="background:var(--navy);color:#fff">AI</div>
+          <div><div class="pc-name">Momentum.</div><div class="pc-sub">AI-Powered Enterprise Automation</div></div>
+          <div class="pc-badge" style="background:var(--navy);color:#fff">AI PRODUCT</div>
+        </div>
+        <div class="pc-body">
+          <p class="pc-desc">Autonomous AI that plugs into any ERP, CRM, database or SaaS tool — SAP, Oracle, Odoo, custom apps — to automate workflows, recommend decisions, and turn enterprise data into action. No rip-and-replace required.</p>
+          <div class="pc-caps">
+            <span class="pc-cap">Workflow Automation</span><span class="pc-cap">Decision Engine</span>
+            <span class="pc-cap">Any ERP / CRM</span><span class="pc-cap">WhatsApp AI</span>
+            <span class="pc-cap">Voice Agents</span><span class="pc-cap">Arabic + English</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="services-label reveal">Service Modules — Available Standalone or as Part of KafaaOne</div>
+    <div class="services-grid reveal">
+      <div class="service-card"><div class="sc-top"><div class="sc-icon" style="background:var(--hr-lt)">👥</div><div class="sc-name" style="color:var(--hr-dk)">HRMS</div></div><div class="sc-body"><p class="sc-desc">16 integrated modules, Employee Central, leave, violations, appraisals, ESS, WPS pre-flight checks, SIF generation.</p></div></div>
+      <div class="service-card"><div class="sc-top"><div class="sc-icon" style="background:var(--pay-lt)">💰</div><div class="sc-name" style="color:var(--pay-dk)">Payroll &amp; WPS</div></div><div class="sc-body"><p class="sc-desc">Multi-entity GCC payroll, native SIF generation, EOSB, gratuity, loans, GL auto-posting, full audit trail.</p></div></div>
+      <div class="service-card"><div class="sc-top"><div class="sc-icon" style="background:var(--ops-lt)">⏰</div><div class="sc-name" style="color:var(--ops-dk)">Attendance</div></div><div class="sc-body"><p class="sc-desc">Biometric, geo-fenced, shift rosters, overtime, QR and selfie verification, exception alerts.</p></div></div>
+      <div class="service-card"><div class="sc-top"><div class="sc-icon" style="background:var(--int-lt)">📋</div><div class="sc-name" style="color:var(--int-dk)">Recruitment</div></div><div class="sc-body"><p class="sc-desc">ATS pipeline, requisitions, offers, onboarding to Employee Central, background checks.</p></div></div>
+      <div class="service-card"><div class="sc-top"><div class="sc-icon" style="background:var(--adm-lt)">⚙️</div><div class="sc-name" style="color:var(--adm-dk)">Operations ERP</div></div><div class="sc-body"><p class="sc-desc">Projects, procurement, inventory, assets, field service, maintenance — tied to Finance and Payroll.</p></div></div>
+      <div class="service-card"><div class="sc-top"><div class="sc-icon" style="background:var(--fin-lt)">📊</div><div class="sc-name" style="color:var(--fin-dk)">Finance ERP</div></div><div class="sc-body"><p class="sc-desc">GL, AR/AP, VAT, multi-entity consolidation, budgeting, cash position — GCC tax-ready.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KAFAAONE ════════════════════════════════════ -->
+<section id="kafaaone" class="modules-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">KafaaOne — By Synetra ERP</span>
+      <h2>39 Apps. 8 Domains.<br>250+ Capabilities.</h2>
+      <p>The complete workforce ERP for security, manpower &amp; facility management companies.</p>
+    </div>
+
+    <!-- Hero banner -->
+    <div class="k1-hero reveal" style="border-top:3px solid var(--gold)">
+      <div>
+        <div class="k1-eyebrow">Flagship Product · By Synetra ERP</div>
+        <div class="k1-name">KafaaOne</div>
+        <div class="k1-tagline">Complete ERP for security, manpower &amp; facility management · 39 apps · 8 domains · 250+ capabilities</div>
+        <div class="k1-flow">
+          <div class="k1-step hl">Recruit</div><div class="k1-step">Deploy</div>
+          <div class="k1-step">Patrol</div><div class="k1-step">Timesheet</div>
+          <div class="k1-step">Payroll</div><div class="k1-step hl">WPS</div>
+        </div>
+      </div>
+      <div class="k1-stats">
+        <div class="k1-stat"><div class="k1-stat-val">39</div><div class="k1-stat-lbl">Apps / 8 Domains</div></div>
+        <div class="k1-stat"><div class="k1-stat-val">250+</div><div class="k1-stat-lbl">Capabilities</div></div>
+        <div class="k1-stat"><div class="k1-stat-val">100%</div><div class="k1-stat-lbl">WPS Compliant</div></div>
+      </div>
+    </div>
+
+    <!-- OPERATIONS -->
+    <div class="domain-section reveal">
+      <div class="domain-header" style="background:var(--ops-lt)">
+        <div class="domain-icon-sq" style="background:var(--ops)">⚙</div>
+        <span class="domain-name" style="color:var(--ops-dk)">Operations Command Center</span>
+        <span class="domain-count" style="background:var(--ops-lt);color:var(--ops-dk)">8 Apps</span>
+      </div>
+      <div class="module-grid">
+        <div class="mod-card"><div class="mod-header" style="background:var(--ops-lt)"><span class="mod-tag" style="color:var(--ops-dk)">Core</span><div class="mod-name">Projects &amp; Sites</div></div><div class="mod-body"><div class="mod-feat">Client project creation &amp; configuration</div><div class="mod-feat">GPS-tagged site setup &amp; post definition</div><div class="mod-feat">SLA configuration &amp; contract renewals</div><div class="mod-feat">Multi-site hierarchy &amp; profitability tracking</div><div class="mod-feat">Project-based payroll cost allocation</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--ops-lt)"><span class="mod-tag" style="color:var(--ops-dk)">AI</span><div class="mod-name">Smart Rostering</div></div><div class="mod-body"><div class="mod-feat">AI-assisted roster generation</div><div class="mod-feat">Auto conflict detection &amp; day-off rules</div><div class="mod-feat">Overtime eligibility automation</div><div class="mod-feat">Relief guard pool management</div><div class="mod-feat">Multi-week roster planning &amp; approval</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--ops-lt)"><span class="mod-tag" style="color:var(--ops-dk)">Live</span><div class="mod-name">Patrol Monitoring</div></div><div class="mod-body"><div class="mod-feat">NFC &amp; QR checkpoint scanning</div><div class="mod-feat">GPS live guard tracking on map</div><div class="mod-feat">Missed checkpoint escalation alerts</div><div class="mod-feat">Patrol route definition &amp; scheduling</div><div class="mod-feat">Patrol performance reports per guard</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--ops-lt)"><span class="mod-tag" style="color:var(--ops-dk)">Governance</span><div class="mod-name">Incident Management</div></div><div class="mod-body"><div class="mod-feat">Digital incident report with photo/video</div><div class="mod-feat">Severity classification &amp; multi-level escalation</div><div class="mod-feat">Root cause &amp; corrective action tracking</div><div class="mod-feat">Client-visible reports &amp; SLA breach alerts</div><div class="mod-feat">Incident trend analytics</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--ops-lt)"><span class="mod-tag" style="color:var(--ops-dk)">Core</span><div class="mod-name">Deployment Planning</div></div><div class="mod-body"><div class="mod-feat">Guard-to-site assignment engine</div><div class="mod-feat">Manning threshold &amp; gap detection</div><div class="mod-feat">Skill &amp; certification matching</div><div class="mod-feat">Shift handover management</div><div class="mod-feat">Deployment change audit log</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--ops-lt)"><span class="mod-tag" style="color:var(--ops-dk)">CRM</span><div class="mod-name">Client CRM &amp; Portal</div></div><div class="mod-body"><div class="mod-feat">Client account &amp; SLA management</div><div class="mod-feat">Client portal with live deployment visibility</div><div class="mod-feat">Incident visibility &amp; inspection reports</div><div class="mod-feat">Invoice &amp; payment history for clients</div><div class="mod-feat">Contract renewal workflow</div></div></div>
+      </div>
+    </div>
+
+    <!-- HR -->
+    <div class="domain-section reveal">
+      <div class="domain-header" style="background:var(--hr-lt)">
+        <div class="domain-icon-sq" style="background:var(--hr)">👥</div>
+        <span class="domain-name" style="color:var(--hr-dk)">HR &amp; Employee Lifecycle</span>
+        <span class="domain-count" style="background:var(--hr-lt);color:var(--hr-dk)">8 Apps</span>
+      </div>
+      <div class="module-grid">
+        <div class="mod-card"><div class="mod-header" style="background:var(--hr-lt)"><span class="mod-tag" style="color:var(--hr-dk)">Hire</span><div class="mod-name">Recruitment &amp; ATS</div></div><div class="mod-body"><div class="mod-feat">ATS pipeline — job post to offer letter</div><div class="mod-feat">Visa, QID &amp; document expiry tracking</div><div class="mod-feat">Background check &amp; visa pre-screening</div><div class="mod-feat">Candidate pipeline by stage</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--hr-lt)"><span class="mod-tag" style="color:var(--hr-dk)">Onboard</span><div class="mod-name">Onboarding &amp; Docs</div></div><div class="mod-body"><div class="mod-feat">Digital onboarding checklist &amp; e-signing</div><div class="mod-feat">Contract generation &amp; document vault</div><div class="mod-feat">Medical fitness &amp; work permit tracking</div><div class="mod-feat">Document completeness score</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--hr-lt)"><span class="mod-tag" style="color:var(--hr-dk)">Daily</span><div class="mod-name">Attendance Management</div></div><div class="mod-body"><div class="mod-feat">Geo-fenced mobile check-in/out</div><div class="mod-feat">Selfie verification (anti-spoofing)</div><div class="mod-feat">Biometric device sync (ZKTeco, Suprema)</div><div class="mod-feat">Late/absent alerts &amp; auto-timesheet</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--hr-lt)"><span class="mod-tag" style="color:var(--hr-dk)">HR</span><div class="mod-name">Leave Management</div></div><div class="mod-body"><div class="mod-feat">Leave policy engine (annual, sick, emergency)</div><div class="mod-feat">Online leave request &amp; approval workflow</div><div class="mod-feat">Leave balance accrual &amp; encashment</div><div class="mod-feat">Public holiday calendar integration</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--hr-lt)"><span class="mod-tag" style="color:var(--hr-dk)">HR</span><div class="mod-name">Performance &amp; Discipline</div></div><div class="mod-body"><div class="mod-feat">KPI definition per role &amp; guard scorecard</div><div class="mod-feat">Patrol compliance rate as KPI</div><div class="mod-feat">Disciplinary records &amp; warning workflow</div><div class="mod-feat">Quarterly review cycles</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--hr-lt)"><span class="mod-tag" style="color:var(--hr-dk)">Exit</span><div class="mod-name">Offboarding &amp; EOSB</div></div><div class="mod-body"><div class="mod-feat">Resignation &amp; clearance workflow</div><div class="mod-feat">EOSB auto-calculation (Art. 54)</div><div class="mod-feat">Visa cancellation &amp; asset return tracking</div><div class="mod-feat">Experience certificate generation</div></div></div>
+      </div>
+    </div>
+
+    <!-- PAYROLL -->
+    <div class="domain-section reveal">
+      <div class="domain-header" style="background:var(--pay-lt)">
+        <div class="domain-icon-sq" style="background:var(--pay)">💰</div>
+        <span class="domain-name" style="color:var(--pay-dk)">Payroll &amp; WPS Compliance</span>
+        <span class="domain-count" style="background:var(--pay-lt);color:var(--pay-dk)">5 Apps</span>
+      </div>
+      <div class="module-grid-4">
+        <div class="mod-card"><div class="mod-header" style="background:var(--pay-lt)"><span class="mod-tag" style="color:var(--pay-dk)">Core</span><div class="mod-name">Payroll Engine</div></div><div class="mod-body"><div class="mod-feat">Multi-policy overtime &amp; day-off calculations</div><div class="mod-feat">Allowance automation (transport, housing, food)</div><div class="mod-feat">Multi-project payroll cost splitting</div><div class="mod-feat">Bulk processing, preview &amp; final lock</div><div class="mod-feat">Advance salary &amp; deductions management</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--pay-lt)"><span class="mod-tag" style="color:var(--pay-dk)">Qatar Law</span><div class="mod-name">WPS / SIF Generation</div></div><div class="mod-body"><div class="mod-feat">One-click SIF file (MOL format v1 &amp; v2)</div><div class="mod-feat">QNB, CBQ, Doha Bank, Ahli Bank, QIB...</div><div class="mod-feat">Pre-flight WPS validation before submission</div><div class="mod-feat">Failed payment handling &amp; retry logic</div><div class="mod-feat">WPS submission history &amp; status tracking</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--pay-lt)"><span class="mod-tag" style="color:var(--pay-dk)">Qatar Law</span><div class="mod-name">EOSB Calculator</div></div><div class="mod-body"><div class="mod-feat">Qatar Labour Law Art. 54 formula engine</div><div class="mod-feat">Service duration &amp; pro-ration logic</div><div class="mod-feat">EOSB projection for active employees</div><div class="mod-feat">EOSB liability report for finance team</div><div class="mod-feat">Advance EOSB provision tracking</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--pay-lt)"><span class="mod-tag" style="color:var(--pay-dk)">Audit</span><div class="mod-name">Payroll Audit Trail</div></div><div class="mod-body"><div class="mod-feat">Immutable calculation history per employee</div><div class="mod-feat">Month-on-month variance analysis</div><div class="mod-feat">Who-changed-what audit log</div><div class="mod-feat">Locked payroll period protection</div><div class="mod-feat">Auditor read-only access portal</div></div></div>
+      </div>
+    </div>
+
+    <!-- FINANCE -->
+    <div class="domain-section reveal">
+      <div class="domain-header" style="background:var(--fin-lt)">
+        <div class="domain-icon-sq" style="background:var(--fin)">📊</div>
+        <span class="domain-name" style="color:var(--fin-dk)">Finance &amp; Executive Intelligence</span>
+        <span class="domain-count" style="background:var(--fin-lt);color:var(--fin-dk)">5 Apps</span>
+      </div>
+      <div class="module-grid-4">
+        <div class="mod-card"><div class="mod-header" style="background:var(--fin-lt)"><span class="mod-tag" style="color:var(--fin-dk)">BI</span><div class="mod-name">Executive Dashboard</div></div><div class="mod-body"><div class="mod-feat">Real-time KPI cards &amp; health score</div><div class="mod-feat">Payroll leakage detection alerts</div><div class="mod-feat">Site-wise profitability heatmap</div><div class="mod-feat">AI anomaly alerts on unusual patterns</div><div class="mod-feat">Workforce utilisation rate</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--fin-lt)"><span class="mod-tag" style="color:var(--fin-dk)">Finance</span><div class="mod-name">Financial Reports</div></div><div class="mod-body"><div class="mod-feat">Profitability by project &amp; client</div><div class="mod-feat">Labour cost &amp; overtime spend analysis</div><div class="mod-feat">EOSB liability balance sheet entry</div><div class="mod-feat">Revenue vs cost per site</div><div class="mod-feat">Export to Excel / PDF</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--fin-lt)"><span class="mod-tag" style="color:var(--fin-dk)">Finance</span><div class="mod-name">Client Billing</div></div><div class="mod-body"><div class="mod-feat">Invoice generation per project &amp; period</div><div class="mod-feat">Client rate card &amp; overtime billing</div><div class="mod-feat">VAT / tax support — Qatar &amp; GCC</div><div class="mod-feat">Payment tracking &amp; AR aging report</div><div class="mod-feat">Billing dispute workflow</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--fin-lt)"><span class="mod-tag" style="color:var(--fin-dk)">BI</span><div class="mod-name">Budgets &amp; Forecasts</div></div><div class="mod-body"><div class="mod-feat">Annual headcount budget by project</div><div class="mod-feat">Overtime cost budget vs actual</div><div class="mod-feat">EOSB provision forecasting</div><div class="mod-feat">Scenario planning for new sites</div><div class="mod-feat">Budget approval workflow</div></div></div>
+      </div>
+    </div>
+
+    <!-- ADMIN -->
+    <div class="domain-section reveal">
+      <div class="domain-header" style="background:var(--adm-lt)">
+        <div class="domain-icon-sq" style="background:var(--adm)">🏢</div>
+        <span class="domain-name" style="color:var(--adm-dk)">Admin &amp; Support Operations</span>
+        <span class="domain-count" style="background:var(--adm-lt);color:var(--adm-dk)">6 Apps</span>
+      </div>
+      <div class="module-grid">
+        <div class="mod-card"><div class="mod-header" style="background:var(--adm-lt)"><span class="mod-tag" style="color:var(--adm-dk)">Admin</span><div class="mod-name">Procurement</div></div><div class="mod-body"><div class="mod-feat">Purchase requisition &amp; multi-level approval</div><div class="mod-feat">Vendor catalogue &amp; PO generation</div><div class="mod-feat">3-way invoice matching</div><div class="mod-feat">Spend analytics by category &amp; dept</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--adm-lt)"><span class="mod-tag" style="color:var(--adm-dk)">Admin</span><div class="mod-name">Accommodation &amp; Fleet</div></div><div class="mod-body"><div class="mod-feat">Camp/building/room assignment &amp; occupancy</div><div class="mod-feat">Vehicle assignment, fuel &amp; maintenance</div><div class="mod-feat">Accommodation deduction to payroll</div><div class="mod-feat">Insurance &amp; license expiry alerts</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--adm-lt)"><span class="mod-tag" style="color:var(--adm-dk)">Admin</span><div class="mod-name">Uniform &amp; Asset Mgmt</div></div><div class="mod-body"><div class="mod-feat">Uniform issuance, return &amp; laundry cycle</div><div class="mod-feat">Asset assignment &amp; condition tracking</div><div class="mod-feat">Asset return enforcement on offboarding</div><div class="mod-feat">Inventory valuation (FIFO/AVCO)</div></div></div>
+      </div>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="domain-section reveal">
+      <div class="domain-header" style="background:var(--mob-lt)">
+        <div class="domain-icon-sq" style="background:var(--mob)">📱</div>
+        <span class="domain-name" style="color:var(--mob-dk)">Mobile &amp; Field Applications</span>
+        <span class="domain-count" style="background:var(--mob-lt);color:var(--mob-dk)">4 Apps</span>
+      </div>
+      <div class="module-grid">
+        <div class="mod-card"><div class="mod-header" style="background:var(--mob-lt)"><span class="mod-tag" style="color:var(--mob-dk)">Field</span><div class="mod-name">Guard Mobile App</div></div><div class="mod-body"><div class="mod-feat">Geo-fenced check-in/out with selfie</div><div class="mod-feat">NFC/QR patrol checkpoint scanning</div><div class="mod-feat">Incident report with photo &amp; video</div><div class="mod-feat">SOS / panic button for emergencies</div><div class="mod-feat">Offline mode with automatic sync</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--mob-lt)"><span class="mod-tag" style="color:var(--mob-dk)">Field</span><div class="mod-name">Supervisor App</div></div><div class="mod-body"><div class="mod-feat">Live roster &amp; guard deployment map</div><div class="mod-feat">Attendance exception alerts</div><div class="mod-feat">Approve/reject leave &amp; attendance edits</div><div class="mod-feat">One-tap incident escalation</div></div></div>
+        <div class="mod-card"><div class="mod-header" style="background:var(--mob-lt)"><span class="mod-tag" style="color:var(--mob-dk)">Portal</span><div class="mod-name">Client Portal &amp; ESS</div></div><div class="mod-body"><div class="mod-feat">Guard deployment visibility by site</div><div class="mod-feat">Incident &amp; SLA report access</div><div class="mod-feat">Invoice history per client account</div><div class="mod-feat">ESS: payslips, leave, documents</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUTCOMES ══════════════════════════════════════ -->
+<div class="outcomes-strip">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:20px" class="reveal">
+      <span class="eyebrow">Measurable Business Outcomes</span>
+    </div>
+    <div class="outcomes-grid reveal">
+      <div class="outcome-box"><div class="outcome-val">↓ 90%</div><div class="outcome-lbl">Payroll errors eliminated</div><div class="outcome-dir">vs. manual process</div></div>
+      <div class="outcome-box"><div class="outcome-val">↓ 70%</div><div class="outcome-lbl">Reduction in manual admin</div><div class="outcome-dir">HR &amp; Operations</div></div>
+      <div class="outcome-box"><div class="outcome-val">↓ 80%</div><div class="outcome-lbl">Compliance risk reduced</div><div class="outcome-dir">WPS, Labour Law, EOSB</div></div>
+      <div class="outcome-box"><div class="outcome-val">↑ 95%</div><div class="outcome-lbl">Workforce visibility</div><div class="outcome-dir">Real-time, all sites</div></div>
+      <div class="outcome-box"><div class="outcome-val">↑ 25%</div><div class="outcome-lbl">Increase in profitability</div><div class="outcome-dir">Through cost control</div></div>
+      <div class="outcome-box"><div class="outcome-val">4–8<small style="font-size:1rem">wks</small></div><div class="outcome-lbl">Time to go-live</div><div class="outcome-dir">Fixed scope</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INDUSTRIES ════════════════════════════════════ -->
+<section id="industries" class="industries-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Industry Fit</span>
+      <h2>Built for GCC businesses<br>that run on people.</h2>
+      <p>Synetra ERP adapts to the operational reality of workforce-intensive industries across the GCC — from large-scale construction teams to multi-branch security operations.</p>
+    </div>
+    <div class="ind-grid reveal">
+      <div class="ind-card"><div class="ind-accent" style="background:var(--ops)"></div><div class="ind-body"><div class="ind-name">Security Services</div><div class="ind-desc">Full KafaaOne suite — guard deployment, NFC patrol monitoring, site inspections, incident management, shift rostering and WPS payroll in one platform.</div><div class="ind-tags"><span class="ind-tag">Guard Deployment</span><span class="ind-tag">Patrol Monitoring</span><span class="ind-tag">Rostering</span><span class="ind-tag">WPS Payroll</span><span class="ind-tag">Client Portal</span></div></div></div>
+      <div class="ind-card"><div class="ind-accent" style="background:var(--hr)"></div><div class="ind-body"><div class="ind-name">Facility Management</div><div class="ind-desc">Multi-site workforce management with site inspections, digital checklists, work orders, fleet and accommodation for large distributed teams.</div><div class="ind-tags"><span class="ind-tag">Site Inspections</span><span class="ind-tag">Work Orders</span><span class="ind-tag">Fleet</span><span class="ind-tag">Accommodation</span><span class="ind-tag">HRMS</span></div></div></div>
+      <div class="ind-card"><div class="ind-accent" style="background:var(--pay)"></div><div class="ind-body"><div class="ind-name">Manpower Supply</div><div class="ind-desc">End-to-end workforce supply — recruitment pipelines, visa tracking, multi-client deployment, payroll splitting and EOSB compliance.</div><div class="ind-tags"><span class="ind-tag">Recruitment</span><span class="ind-tag">Visa Tracking</span><span class="ind-tag">Multi-Client Pay</span><span class="ind-tag">EOSB</span><span class="ind-tag">WPS</span></div></div></div>
+      <div class="ind-card"><div class="ind-accent" style="background:var(--adm)"></div><div class="ind-body"><div class="ind-name">Construction</div><div class="ind-desc">Project costing linked to actual labour, materials and overhead. Field workforce attendance, procurement and inventory tied to Finance for true project margin.</div><div class="ind-tags"><span class="ind-tag">Project Costing</span><span class="ind-tag">Procurement</span><span class="ind-tag">Inventory</span><span class="ind-tag">Attendance</span><span class="ind-tag">Finance</span></div></div></div>
+      <div class="ind-card"><div class="ind-accent" style="background:var(--fin)"></div><div class="ind-body"><div class="ind-name">Cleaning &amp; Soft Services</div><div class="ind-desc">Uniform management, laundry, QR attendance at client sites, daily checklists, and payroll with allowance automation for large cleaning teams.</div><div class="ind-tags"><span class="ind-tag">Uniform Mgmt</span><span class="ind-tag">QR Attendance</span><span class="ind-tag">Checklists</span><span class="ind-tag">Payroll</span><span class="ind-tag">Leave Mgmt</span></div></div></div>
+      <div class="ind-card"><div class="ind-accent" style="background:var(--mob)"></div><div class="ind-body"><div class="ind-name">Healthcare &amp; Education</div><div class="ind-desc">Credential and certification tracking, multi-shift scheduling, GCC labour compliance, HRMS and payroll for professional workforce environments.</div><div class="ind-tags"><span class="ind-tag">Certification</span><span class="ind-tag">Multi-Shift</span><span class="ind-tag">HRMS</span><span class="ind-tag">Payroll</span><span class="ind-tag">Compliance</span></div></div></div>
+    </div>
+    <div class="gcc-banner reveal">
+      <div class="gcc-banner-left">
+        <div class="gcc-b-eyebrow">GCC Geographic Coverage</div>
+        <h3>Serving clients across six GCC markets — each with built-in local compliance</h3>
+      </div>
+      <div class="gcc-banner-tags">
+        <span class="gcc-b-tag">Qatar</span><span class="gcc-b-tag">UAE</span>
+        <span class="gcc-b-tag">KSA</span><span class="gcc-b-tag">Bahrain</span>
+        <span class="gcc-b-tag">Oman</span><span class="gcc-b-tag">Kuwait</span>
+      </div>
+    </div>
+    <div class="comp-boxes reveal">
+      <div class="comp-box"><h4>Qatar Labour Law</h4><p>Art. 54 EOSB · WPS rules · Leave accrual · Gratuity formulae · SIF banking standards for all major Qatari banks</p></div>
+      <div class="comp-box"><h4>GCC Wide Support</h4><p>UAE MOHRE · KSA MLSD · Bahrain SIO · Oman MOM · Kuwait MSAL — all WPS variants supported out of the box</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY SYNETRA ════════════════════════════════════ -->
+<section id="why" class="why-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Synetra Difference</span>
+      <h2>Why leading GCC operations choose<br>Synetra over generic ERP.</h2>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius-md)">
+    <table class="comparison-table reveal" style="min-width:520px">
+      <thead><tr>
+        <th style="width:32%">Evaluation Criteria</th>
+        <th style="width:34%">Generic ERP Vendors</th>
+        <th style="width:34%">Synetra ERP</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="ct-feat">Qatar Labour Law Compliance</td><td class="ct-no">✗ Requires costly customisation</td><td class="ct-yes">✓ Built in — zero customisation required</td></tr>
+        <tr><td class="ct-feat">WPS / SIF File Generation</td><td class="ct-no">✗ Third-party add-on or manual process</td><td class="ct-yes">✓ Native, all major GCC banks</td></tr>
+        <tr><td class="ct-feat">EOSB &amp; Gratuity Calculation</td><td class="ct-no">✗ Manual or consulting engagement needed</td><td class="ct-yes">✓ Automated Art. 54 formula engine</td></tr>
+        <tr><td class="ct-feat">Security Ops (Patrol, NFC, GPS)</td><td class="ct-no">✗ Not available in generic systems</td><td class="ct-yes">✓ Full KafaaOne patrol &amp; monitoring suite</td></tr>
+        <tr><td class="ct-feat">Implementation Timeline</td><td class="ct-no">✗ 6–18 months typical timeline</td><td class="ct-yes">✓ 4–8 weeks, fixed scope &amp; price</td></tr>
+        <tr><td class="ct-feat">Arabic Interface &amp; RTL</td><td class="ct-no">✗ Limited availability or extra cost</td><td class="ct-yes">✓ Full bilingual UI, RTL-ready</td></tr>
+        <tr><td class="ct-feat">Mobile Guard &amp; Supervisor Apps</td><td class="ct-no">✗ Not industry-specific</td><td class="ct-yes">✓ Guard, Supervisor &amp; Client portal apps</td></tr>
+        <tr><td class="ct-feat">HR → Attendance → Payroll → WPS</td><td class="ct-no">✗ Multiple separate integrations needed</td><td class="ct-yes">✓ One continuous automated flow</td></tr>
+        <tr><td class="ct-feat">Ongoing GCC Support</td><td class="ct-no">✗ Global support, long SLA response times</td><td class="ct-yes">✓ Dedicated GCC team, regional hours</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="why-cards reveal">
+      <div class="why-card featured">
+        <span class="why-icon">🎯</span>
+        <div class="why-title">Purpose-Built for Your Industry</div>
+        <div class="why-body">Synetra is not a horizontal ERP adapted for GCC. It was designed from scratch around GCC workforce operations, security industry workflows, and Qatar compliance requirements.</div>
+        <div class="why-bullets">
+          <div class="wb">Patrol monitoring &amp; NFC checkpoints</div>
+          <div class="wb">Guard deployment &amp; shift management</div>
+          <div class="wb">Multi-client project payroll splitting</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⚡</span>
+        <div class="why-title">Fast, Predictable Go-Live</div>
+        <div class="why-body">Fixed-scope 4–8 week implementation. Discovery, configure, migrate, UAT, go-live. No open-ended consulting or surprise costs.</div>
+        <div class="why-bullets">
+          <div class="wb">Pre-built GCC configuration templates</div>
+          <div class="wb">Training in Arabic &amp; English</div>
+          <div class="wb">Hypercare &amp; dedicated post-go-live support</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤖</span>
+        <div class="why-title">Autonomous AI Built In</div>
+        <div class="why-body">Synetra AI plugs into your ERP and existing systems to automate repetitive workflows and turn operational data into action — in English and Arabic.</div>
+        <div class="why-bullets">
+          <div class="wb">Works with SAP, Oracle, Odoo &amp; custom apps</div>
+          <div class="wb">WhatsApp, voice &amp; web AI agents</div>
+          <div class="wb">Human-in-the-loop approval governance</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🔒</span>
+        <div class="why-title">Enterprise-Grade &amp; Scalable</div>
+        <div class="why-body">From 50 to 50,000+ employees. Multi-tenant, multi-entity, multi-currency with GCC data residency and enterprise security built in.</div>
+        <div class="why-bullets">
+          <div class="wb">Role-based access &amp; SSO / 2FA</div>
+          <div class="wb">AES-256 encryption, full audit logs</div>
+          <div class="wb">GCC-resident cloud infrastructure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPLEMENTATION ════════════════════════════════ -->
+<section id="implementation" class="impl-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How We Deliver</span>
+      <h2>A clear, structured path<br>to go-live in 4–8 weeks.</h2>
+      <p>Synetra's implementation methodology is built around GCC workforce realities. Every engagement follows a fixed-scope, milestone-driven process with a senior specialist who has hands-on experience with Qatar labour law, WPS systems, and GCC HR operations.</p>
+    </div>
+    <div class="impl-steps reveal">
+      <div class="impl-step"><div class="impl-num">01</div><div class="impl-step-name">Discovery</div><div class="impl-step-desc">Workshop with HR, Ops &amp; Finance to map current workflows, pain points and compliance requirements</div></div>
+      <div class="impl-step"><div class="impl-num">02</div><div class="impl-step-name">Configure</div><div class="impl-step-desc">Pre-built GCC templates tailored to your policies, entities, pay structures and approval workflows</div></div>
+      <div class="impl-step"><div class="impl-num">03</div><div class="impl-step-name">Migrate</div><div class="impl-step-desc">Employee data, biometrics, banks and existing systems migrated with validation and reconciliation</div></div>
+      <div class="impl-step"><div class="impl-num">04</div><div class="impl-step-name">Train</div><div class="impl-step-desc">Hands-on training for HR, Payroll, Operations and managers — delivered in Arabic &amp; English</div></div>
+      <div class="impl-step"><div class="impl-num">05</div><div class="impl-step-name">Go-Live</div><div class="impl-step-desc">Hypercare period with dedicated support, then transition to GCC regional support team</div></div>
+    </div>
+    <div class="impl-details reveal">
+      <div class="impl-box">
+        <h4>What's Included in Every Implementation</h4>
+        <div class="impl-item">Senior GCC implementation specialist assigned</div>
+        <div class="impl-item">Pre-built Qatar labour law configuration</div>
+        <div class="impl-item">WPS &amp; SIF setup for all bank accounts</div>
+        <div class="impl-item">Employee data migration &amp; validation</div>
+        <div class="impl-item">Biometric device integration &amp; testing</div>
+        <div class="impl-item">Role-based training for each user group</div>
+        <div class="impl-item">Parallel payroll run for first pay cycle</div>
+        <div class="impl-item">Hypercare support — first 30 days post go-live</div>
+      </div>
+      <div class="impl-box">
+        <h4>Technical Integration Support</h4>
+        <div class="impl-item">Biometric device connectivity (ZKTeco, Suprema, HID)</div>
+        <div class="impl-item">NFC &amp; QR patrol checkpoint installation guidance</div>
+        <div class="impl-item">Bank SIF format testing &amp; submission validation</div>
+        <div class="impl-item">Legacy ERP / HRMS data migration tools</div>
+        <div class="impl-item">Chart of accounts mapping for Finance ERP</div>
+        <div class="impl-item">SSO / Active Directory integration (if required)</div>
+        <div class="impl-item">API connector setup for third-party systems</div>
+        <div class="impl-item">Mobile app deployment for iOS &amp; Android fleet</div>
+      </div>
+    </div>
+    <div class="impl-stats reveal">
+      <div class="impl-stat"><div class="impl-stat-label">Implementation Timeline</div><div class="impl-stat-val">4–8 Weeks</div><div class="impl-stat-sub">Fixed scope, no surprises</div></div>
+      <div class="impl-stat"><div class="impl-stat-label">Training Languages</div><div class="impl-stat-val">Arabic &amp; English</div><div class="impl-stat-sub">All user groups covered</div></div>
+      <div class="impl-stat"><div class="impl-stat-label">Post Go-Live Support</div><div class="impl-stat-val">Dedicated GCC Team</div><div class="impl-stat-sub">Regional hours, regional expertise</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══════════════════════════════════════════ -->
+<section id="cta" class="cta-section">
+  <div class="cta-inner">
+    <span class="cta-eyebrow">Ready to Transform Your Operations?</span>
+    <h2 class="cta-title reveal">From workforce chaos<br><em>to operational intelligence.</em></h2>
+    <p class="cta-sub reveal">Book a 30-minute live demo with a GCC implementation specialist. No slide decks. No sales theatre. We run Synetra on your real workforce scenario — live.</p>
+    <div class="cta-stats reveal">
+      <div class="cta-stat"><div class="cta-stat-val">50K+</div><div class="cta-stat-lbl">Employees managed across GCC implementations</div></div>
+      <div class="cta-stat"><div class="cta-stat-val">100%</div><div class="cta-stat-lbl">WPS submission accuracy on every pay cycle</div></div>
+      <div class="cta-stat"><div class="cta-stat-val">4–8<br><small style="font-size:1rem">wks</small></div><div class="cta-stat-lbl">Fixed-scope go-live from contract signing</div></div>
+      <div class="cta-stat"><div class="cta-stat-val">250+</div><div class="cta-stat-lbl">Platform capabilities across KafaaOne</div></div>
+    </div>
+    <div class="contact-cards reveal">
+      <div class="contact-card"><div class="contact-label">Email</div><div class="contact-val">info@synetraerp.com</div></div>
+      <div class="contact-card"><div class="contact-label">WhatsApp</div><div class="contact-val">+1 647 529 4786</div></div>
+      <div class="contact-card"><div class="contact-label">Website</div><div class="contact-val">synetraerp.com</div></div>
+      <div class="contact-card"><div class="contact-label">Location</div><div class="contact-val">Doha, Qatar — serving GCC</div></div>
+    </div>
+
+    <div class="domains-summary reveal">
+      <div class="ds-eyebrow">KafaaOne — All 8 Module Domains · 39 Apps · 250+ Capabilities</div>
+      <div class="ds-grid">
+        <div class="ds-item"><div class="ds-name" style="color:var(--ops)">OPERATIONS</div><div class="ds-caps">Projects · Rostering · Patrol · Incidents · Inspections · CRM</div></div>
+        <div class="ds-item"><div class="ds-name" style="color:var(--hr)">HR &amp; WORKFORCE</div><div class="ds-caps">Recruit · Onboard · Attendance · Leave · Performance · EOSB</div></div>
+        <div class="ds-item"><div class="ds-name" style="color:var(--pay)">PAYROLL &amp; WPS</div><div class="ds-caps">Engine · WPS/SIF · EOSB Calc · Audit Trail · Timesheet</div></div>
+        <div class="ds-item"><div class="ds-name" style="color:var(--fin)">FINANCE &amp; BI</div><div class="ds-caps">Executive Dash · Reports · Billing · Budgets · Forecasts</div></div>
+        <div class="ds-item"><div class="ds-name" style="color:var(--adm)">ADMIN &amp; SUPPORT</div><div class="ds-caps">Procurement · Accommodation · Fleet · Uniform · Inventory</div></div>
+        <div class="ds-item"><div class="ds-name" style="color:var(--mob)">MOBILE &amp; FIELD</div><div class="ds-caps">Guard App · Supervisor App · Client Portal · ESS</div></div>
+        <div class="ds-item"><div class="ds-name" style="color:var(--int)">INTEGRATION</div><div class="ds-caps">REST API · Notifications · Biometric · NFC/QR · Reporting</div></div>
+        <div class="ds-item"><div class="ds-name" style="color:var(--fog)">SECURITY</div><div class="ds-caps">RBAC · SSO/2FA · AES-256 · Audit Logs · Multi-Tenancy</div></div>
+      </div>
+    </div>
+
+    <div class="cta-divider"></div>
+    <div class="footer-row reveal">
+      <div class="footer-copy">© 2025 Synetra ERP — Brand of BD for IT and Trading. All rights reserved. Confidential &amp; Proprietary.</div>
+      <div class="footer-countries">
+        <span class="fc-item">Qatar</span><span class="fc-item">UAE</span>
+        <span class="fc-item">KSA</span><span class="fc-item">Bahrain</span>
+        <span class="fc-item">Oman</span><span class="fc-item">Kuwait</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ── Hamburger menu ─────────────────────────────────
+const ham = document.getElementById('hamburger')
+const mNav = document.getElementById('mobile-nav')
+
+ham.addEventListener('click', () => {
+  const open = mNav.classList.toggle('open')
+  ham.classList.toggle('open', open)
+  document.body.style.overflow = open ? 'hidden' : ''
+})
+
+// Close on any link click
+document.querySelectorAll('.mobile-link').forEach(a => {
+  a.addEventListener('click', () => {
+    mNav.classList.remove('open')
+    ham.classList.remove('open')
+    document.body.style.overflow = ''
+  })
+})
+
+// Close on outside click
+document.addEventListener('click', e => {
+  if (!ham.contains(e.target) && !mNav.contains(e.target)) {
+    mNav.classList.remove('open')
+    ham.classList.remove('open')
+    document.body.style.overflow = ''
+  }
+})
+
+// ── Scroll reveal ───────────────────────────────────
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') })
+}, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' })
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
+
+// ── Active nav highlight ────────────────────────────
+const sections = document.querySelectorAll('section[id]')
+const navLinks = document.querySelectorAll('.nav-links a')
+window.addEventListener('scroll', () => {
+  let cur = ''
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 120) cur = s.id })
+  navLinks.forEach(a => {
+    const active = a.getAttribute('href') === '#'+cur
+    a.style.background = active ? 'var(--off)' : ''
+    a.style.color = active ? 'var(--navy)' : ''
+  })
+}, { passive: true })
+</script>
+</body>
+</html>
